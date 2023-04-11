@@ -20,6 +20,22 @@ export class ConversorComponent {
   verificacao1() {
     const numeroConvertido1: number = parseInt(this.opcao1); //Converte a strig para numero
     const numeroConvertido2: number = parseInt(this.opcao2); //Converte a strig para numero
+    //verificar se foi selecionado alguma moeda
+    if (!isNaN(numeroConvertido1) && !isNaN(numeroConvertido2)) {
+      //if com todas as possibilidade do primeiro imput
+      if (numeroConvertido1 == numeroConvertido2) { // de real para real
+        this.result = this.ValorCambio;
+      } else{ 
+        //real para Dolar
+        this.result =  this.ValorDesejado / this.ValorCambio ;
+      } 
+    } else {
+      this.setMesagemError('Selecione a moeda dos dois campos!');
+    }
+  }
+  verificacao2() {
+    const numeroConvertido1: number = parseInt(this.opcao1); //Converte a strig para numero
+    const numeroConvertido2: number = parseInt(this.opcao2); //Converte a strig para numero
     //verificar se foi selecionado alguma medida
     if (!isNaN(numeroConvertido1) && !isNaN(numeroConvertido2)) {
       //if com todas as possibilidade do primeiro imput
@@ -41,6 +57,8 @@ export class ConversorComponent {
   }
 
   limpar(){
-    this.mensagemError = '';
+    this.ValorCambio = 0 ;
+    this.ValorDesejado = 0 ;
+    this.result = 0;
   }
 }
