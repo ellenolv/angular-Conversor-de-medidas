@@ -1,27 +1,37 @@
-<br />
-<form>
-    <div class="principal">
-        <h1>CONVERSOR DE MOEDA</h1>
-        <div class="entrada-dados">
-            <input type="number" name="Vdesejad" [(ngModel)]="Vdesejad" class="input" ><!-- o name vale o equivalente ao id --><!-- [()] two way: atualiza automaticamente sempre que altera o atributo - dois sentidos -->
-            <input type="number" name="Vcambio" [(ngModel)]="Vcambio" class="input" ><!-- formulario PRECISA ter NAME, sem ele nao funciona -->
-        </div>
-        <select name="moedas" id="Opcao1">
-          
-            <option value="real">Real</option>
-            <option value="dolar(EUA)">Dolar EUA </option>
-            <option value="euro">Euro</option>
-            <option value="libra">Libra</option>
-        </select>
-        <select name="moedas" id="Opcao2">
-            
-            <option value="real">Real</option>
-            <option value="dolar(EUA)">Dolar EUA </option>
-            <option value="euro">Euro</option>
-            <option value="libra">Libra</option>
-        </select>
-        <button name="calc" (click)="calc()">Calcular</button>
-        <button name="limpar" (click)="limpar()">Limpar</button>
-        <input type="number" name="result" id="result" readonly [value] = "result">
-    </div>
-</form>
+<h1 class="fw-bold fs-1 text-center animation mb-5"> Conversor</h1>
+<p class="text-center text-danger mb-2 ">{{mensagemError}}</p>
+<label for="Va">Valor Desejado</label>
+<div class="col-12">
+<div class="input-group mb-4">
+    
+  <div ngbDropdown class="d-inline-block">
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="opcao1" (click)="limpar()">
+      <option selected Disabled>Moedas</option>
+      <option value="1">Real</option>
+      <option value="2">Dolar (USA) </option>
+      <option value="3">Euro</option>
+    </select>
+  </div>
+  <input id="ValorDesejado" type="number" class="form-control p-3" aria-label="Text input with dropdown button "
+    [(ngModel)]="ValorDesejado" (keyup)="verificacao1()" placeholder="0">
+    
+</div>
+</div>
+<label for="Va">Cambio</label>
+<div class="col-12">
+<div class="input-group mb-4">
+  <div ngbDropdown class="d-inline-block">
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="opcao2" (click)="limpar()">
+        <option selected Disabled>Moedas</option>
+        <option value="1">Real</option>
+        <option value="2">Dolar (USA) </option>
+        <option value="3">Euro</option>
+    </select>
+  </div>
+  <input type="number" class="form-control p-3" aria-label="Text input with dropdown button "
+    [(ngModel)]="ValorCambio" (keyup)="verificacao2()" placeholder="0">
+
+    <label>resultado</label>
+    <input type="number" readonly>
+</div>
+</div>
