@@ -5,6 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './conversor.component.html',
   styleUrls: ['./conversor.component.css']
 })
-export class ConversorComponent{
+export class ConversorComponent {
+  //valor desejado
+  valor : number = 0;
 
+  //opção selecionada
+  calc(){
+
+  }
 }
