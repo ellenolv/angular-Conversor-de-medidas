@@ -7,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversorComponent {
   //valor desejado
-  valor : number = 0;
+  Vdesejad : number = 78;
+  Vcambio : number = 78;
+  result : number = 59;
+
 
   //opção selecionada
-  calc(){
+   calc(){
 
+   }
+   limpar(){
+    this.Vcambio = 0;
+    this.Vdesejad = 0;
+    this.result = 0;
   }
+  
 }

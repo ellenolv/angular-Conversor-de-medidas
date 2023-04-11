@@ -1,22 +1,27 @@
 <br />
-<div class="principal">
-    <h1>CONVERSOR DE MOEDA</h1>
-    <label> valor: </label>
-    <input type="number" id="">
-
-    <select name="moedas" id="Opcao1">
-      
-        <option value="real">Real</option>
-        <option value="dolar(EUA)">Dolar EUA </option>
-        <option value="euro">Euro</option>
-        <option value="libra">Libra</option>
-    </select>
-    <select name="moedas" id="Opcao2">
-        
-        <option value="real">Real</option>
-        <option value="dolar(EUA)">Dolar EUA </option>
-        <option value="euro">Euro</option>
-        <option value="libra">Libra</option>
-    </select>
-    <input type="number" name="result" id="result" readonly>
-</div>
+<form>
+    <div class="principal">
+        <h1>CONVERSOR DE MOEDA</h1>
+        <div class="entrada-dados">
+            <input type="number" name="Vdesejad" [(ngModel)]="Vdesejad" class="input" ><!-- o name vale o equivalente ao id --><!-- [()] two way: atualiza automaticamente sempre que altera o atributo - dois sentidos -->
+            <input type="number" name="Vcambio" [(ngModel)]="Vcambio" class="input" ><!-- formulario PRECISA ter NAME, sem ele nao funciona -->
+        </div>
+        <select name="moedas" id="Opcao1">
+          
+            <option value="real">Real</option>
+            <option value="dolar(EUA)">Dolar EUA </option>
+            <option value="euro">Euro</option>
+            <option value="libra">Libra</option>
+        </select>
+        <select name="moedas" id="Opcao2">
+            
+            <option value="real">Real</option>
+            <option value="dolar(EUA)">Dolar EUA </option>
+            <option value="euro">Euro</option>
+            <option value="libra">Libra</option>
+        </select>
+        <button name="calc" (click)="calc()">Calcular</button>
+        <button name="limpar" (click)="limpar()">Limpar</button>
+        <input type="number" name="result" id="result" readonly [value] = "result">
+    </div>
+</form>
