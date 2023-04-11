@@ -1,5 +1,4 @@
-<h1 text-center> CONVERSOR DE CÂMBIO</h1>
-<button class="btn btn-primary" type="submit" onclick="limpar">Limpar</button>
+<h1 class="fw-bold fs-1 text-center mb-5"> Conversor de Câmbio</h1>
 <p class="text-center text-danger mb-2 ">{{mensagemError}}</p>
 <label>Valor Desejado</label>
 <div class="col-12">
@@ -32,8 +31,8 @@
   <input type="number" class="form-control p-3" aria-label="Text input with dropdown button " [(ngModel)]="ValorCambio" placeholder="0">
 </div>
     <div>
-        <label>resultado</label>
-        <input type="number" class="form-control p-3" aria-label="Text input with dropdown button " [(ngModel)]="result" (keyup)="verificacao2()" placeholder="0">
+        <label>Resultado:</label>
+        <input type="number" class="form-control p-3" aria-label="Text input with dropdown button " [(ngModel)]="result" (keyup)="verificacao1()" placeholder="0">
         <button class="btn btn-primary" type="submit" onclick="limpar">Limpar</button>
     </div>
 </div>
