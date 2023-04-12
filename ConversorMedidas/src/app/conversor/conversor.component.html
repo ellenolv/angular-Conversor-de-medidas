@@ -1,0 +1,39 @@
+<h1 class="fw-bold fs-1 text-center mb-5"> Conversor de Velocidade</h1>
+<p class="text-center text-danger mb-2 ">{{mensagemError}}</p>
+<div class="col-12">
+<div class="input-group mb-4">
+  <label> Quero Converter: </label>
+  <div ngbDropdown class="d-inline-block">
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="opcao1" (click)="limpar()">
+      <option selected Disabled>Medidas</option>
+      <option value="1"> Kilometro por hora (Km/h)</option>
+        <option value="2"> Metro por segundo (m/s)</option>
+        <option value="3"> Milha por hora (mph)</option>
+
+    </select>
+  </div>
+  <input id="ValorDesejado" type="number" class="form-control p-3" aria-label="Text input with dropdown button "
+    [(ngModel)]="medida1" (keyup)="calc()" placeholder="0">
+    
+</div>
+</div>
+<div class="col-12">
+<div class="input-group mb-4">
+  <label> Para: </label>
+  <div ngbDropdown class="d-inline-block">
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="opcao2" (click)="limpar()">
+        <option selected Disabled>Medidas</option>
+        <option value="1"> Kilometro por hora (Km/h)</option>
+        <option value="2"> Metro por segundo (m/s)</option>
+        <option value="3"> Milha por hora (mph)</option>
+    </select>
+  </div>  
+  
+</div>
+
+    <div>
+        <label>Resultado:</label>
+        <input type="number" class="form-control p-3" aria-label="Text input with dropdown button " [(ngModel)]="result" (keyup)="calc()" placeholder="0">
+        <button class="btn btn-primary" type="submit" onclick="limpar()"> Limpar </button>
+    </div>
+</div>
